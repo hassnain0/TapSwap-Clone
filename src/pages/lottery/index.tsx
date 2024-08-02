@@ -1,6 +1,8 @@
 import { Heart, HeartHandshake } from "lucide-react"
 import { useState } from "react"
 
+import { Navigation } from "@/components/navigation"
+
 import Cart from "@/assets/lottery/Cart.png"
 import Moto from "@/assets/lottery/Moto.png"
 import Phone from "@/assets/lottery/Phone.png"
@@ -8,8 +10,6 @@ import Phone from "@/assets/lottery/Phone.png"
 import Vector1 from "@/assets/lottery-button/vector-1.png"
 import Vector2 from "@/assets/lottery-button/vector-2.png"
 import Vector3 from "@/assets/lottery-button/vector-3.png"
-
-import { Navigation } from "@/components/navigation"
 
 const veicles = [
   {

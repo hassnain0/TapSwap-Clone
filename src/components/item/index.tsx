@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react"
+import { Video } from "@/components/video"
 
 import poly from "../../assets/poly.png"
 
@@ -10,7 +11,8 @@ interface ItemProps {
 
 export function Item({ socialIcon, title, value }: ItemProps) {
   return (
-    <li className="flex items-center justify-between bg-[#2C3649] rounded-[10px] p-4">
+    <Video>
+      <li className="flex items-center justify-between bg-[#2C3649] rounded-[10px] p-4">
         <div className="flex items-center gap-2">
           <img src={socialIcon} alt="" className="w-7 h-7" />
           <div className="flex flex-col gap-[2px]">
@@ -21,6 +23,7 @@ export function Item({ socialIcon, title, value }: ItemProps) {
           </div>
         </div>
         <ChevronRight color="#BEBEBE" size={32} />
-    </li>
+      </li>
+    </Video>
   )
 }
