@@ -11,24 +11,29 @@ export function Invites() {
         </header>
 
         <main className="flex flex-col mt-6">
-          <div className="flex flex-col gap-4 mb-6">
+          <div className="flex flex-col gap-4 mb-4 bg-[#2C3649]/70 border-2 border-[#2C3649] p-4 rounded-md">
             <div className="flex justify-between items-center">
               <strong className="text-white text-xl">Your Invite Link</strong>
-              <button className="rounded-md text-white flex justify-center items-center w-[84px] h-[44px] bg-button-gradient">copy</button>
+              <button className="rounded-md text-white flex justify-center items-center w-[84px] h-[40px] bg-button-gradient">copy</button>
             </div>
 
             <span className="text-base text-white/60">The LR01 uses the same design as the most iconic bikes </span>
           </div>
 
-          <ul className="flex flex-col gap-2.5 mt-4">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <Invite
-                name="Desmond"
-                value="100 00"
-                key={index}
-              />
-            ))}
-          </ul>
+          <div className="h-[2px] rounded-full w-full bg-[#2C3649]/50" />
+
+          <div className="mt-4 flex flex-col gap-2">
+            <strong className="text-white">My Referals:</strong>
+            <ul className="flex flex-col gap-2.5">
+              {Array.from({ length: 10 }).map((_, index) => (
+                <Invite
+                  name="Desmond"
+                  value="100 00"
+                  key={index}
+                />
+              ))}
+            </ul>
+          </div>
         </main>
       </div>
 

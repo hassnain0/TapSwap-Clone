@@ -14,25 +14,32 @@ import Vector4 from "@/assets/lottery-button/vector-4.png"
 import Vector from "@/assets/lottery-button/vector.png"
 
 import { Link } from "react-router-dom"
+import { ActiveButton } from "./activeButton"
 
 const veicles = [
   {
     name: "Rolls Royace",
     value: "250",
     image: Cart,
-    heart: true
+    heart: true,
+    title: "Veloce 130",
+    description: "The LR01 features a design inspired by the classic models from PEUGEOT Cycles' storied 130-year legacy, blending timeless aesthetics with agile, responsive performance ideal for modern urban environments. Its lugged construction enhances both durability and style."
   },
   {
     name: "Iphone 16",
     value: "40 000",
     image: Phone,
-    heart: false
+    heart: false,
+    title: "Urban Pulse",
+    description: "Drawing from PEUGEOT Cycles' 130-year heritage of iconic bike designs, the LR01 marries a classic look with contemporary, nimble performance tailored for city riding. The lugged frame provides both elegance and strength, ensuring a smooth ride through urban landscapes."
   },
   {
     name: "Bikes",
     value: "5 000",
     image: Moto,
-    heart: true
+    heart: true,
+    title: "Classic Drive",
+    description: "The LR01 embodies the essence of PEUGEOT Cycles' renowned 130-year history, merging a traditional design with dynamic, agile performance that suits the demands of today's cities. Its lugged framework offers a perfect blend of durability and classic charm."
   },
 ]
 
@@ -76,29 +83,19 @@ export function Lottery() {
             </div>
 
             <div className="flex items-center gap-2 relative mt-4 mb-4">
-              <button onClick={() => setCurrent(0)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
-                <img src={Vector} alt="" className="w-full" />
-              </button>
-              <button onClick={() => setCurrent(1)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md top-[-10px]">
-                <img src={Vector1} alt="" className="h-full object-contain" />
-              </button>
-              <button onClick={() => setCurrent(2)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
-                <img src={Vector2} alt="" className="h-full object-contain" />
-              </button>
-              <button onClick={() => setCurrent(2)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
-                <img src={Vector3} alt="" className="h-full object-contain" />
-              </button>
-              <button onClick={() => setCurrent(2)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
-                <img src={Vector4} alt="" className="h-full object-contain" />
-              </button>
+              <ActiveButton image={Vector} current={current} position={0} setCurrent={() => setCurrent(0)} />
+              <ActiveButton image={Vector1} current={current} position={1} setCurrent={() => setCurrent(1)} />
+              <ActiveButton image={Vector2} current={current} position={2} setCurrent={() => setCurrent(2)} />
+              <ActiveButton image={Vector3} current={current} position={3} setCurrent={() => setCurrent(2)} />
+              <ActiveButton image={Vector4} current={current} position={4} setCurrent={() => setCurrent(2)} />
             </div>
           </div>
 
           <div className="mt-8">
             <span className="text-[#3CA4EB] bg-[#323B4F] flex justify-center items-center rounded-md w-32 h-12">Description</span>
             <div className="mt-6 flex flex-col gap-2">
-              <strong className="text-white text-[17px]">PEUGEOT - LR01</strong>
-              <p className="text-white/60 text-base">The LR01 uses the same design as the most iconic bikes from PEUGEOT Cycles' 130-year history and combines it with agile, dynamic performance that's perfectly suited to navigating today's cities. As well as a lugged.</p>
+              <strong className="text-white text-[17px]">{veicles[current].title}</strong>
+              <p className="text-white/60 text-base">{veicles[current].description}</p>
             </div>
           </div>
 

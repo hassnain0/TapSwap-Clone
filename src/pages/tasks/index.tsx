@@ -7,7 +7,7 @@ import { Task } from "./task"
 export function Tasks() {
   return (
     <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-2 px-6 overflow-y-scroll">
+      <div className="flex flex-col flex-1 pt-2 px-5 overflow-y-scroll">
         <Summary />
 
         <main className="flex flex-col mt-6">

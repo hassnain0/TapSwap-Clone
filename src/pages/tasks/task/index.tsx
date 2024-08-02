@@ -1,4 +1,4 @@
-import { Progress } from "@/components/ui/progress";
+import { Progress } from "./progress";
 
 import poly from "@/assets/blue-polygon.png"
 import ribbon from "@/assets/ribbon.png"
@@ -10,7 +10,7 @@ interface ItemProps {
 
 export function Task({ title, value }: ItemProps) {
   return (
-    <li className="bg-[#2C3649] rounded-[10px] p-4">
+    <li className="bg-[#2C3649] rounded-[10px] p-4 flex flex-col gap-4">
       <div className="flex justify-between items-center gap-2">
         <div className="flex flex-col">
           <div className="flex items-center gap-1">
@@ -26,7 +26,7 @@ export function Task({ title, value }: ItemProps) {
         <button className="text-[#595959] text-xs font-medium bg-white-06 flex justify-center items-center rounded-lg px-3 py-1">Claim</button>
       </div>
 
-      <Progress value={40} className="mt-2"/>
+      <Progress value={40}/>
     </li>
   )
 }
