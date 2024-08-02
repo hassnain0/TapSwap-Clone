@@ -14,7 +14,7 @@ export function Navigation() {
         <NavLink to="/">
           <Pickaxe />
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/lottery">
           <Scroll />
         </NavLink>
         <NavLink to="/static">

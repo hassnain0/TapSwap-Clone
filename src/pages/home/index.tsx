@@ -5,7 +5,6 @@ import iconsImage from "@/assets/icons.png"
 import robotImage from "@/assets/robot.png"
 import polygonImage from "@/assets/polygon.png"
 
-
 export function Home() {
   return (
     <div className="min-h-screen bg-[#242C3B] flex flex-col">

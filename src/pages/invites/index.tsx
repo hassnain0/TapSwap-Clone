@@ -1,25 +1,34 @@
-import { ChevronLeft } from "lucide-react"
-import { Navigation } from "@/components/navigation"
+import { Navigation } from "../../components/navigation"
+import { Invite } from "./invite"
 
 export function Invites() {
   return (
     <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-8 px-8 overflow-y-scroll">
-        <header className="flex items-center justify-between w-full">
-          <button className="h-10 w-10 flex justify-center items-center rounded-lg custom-gradient text-white">
-            <ChevronLeft color="white" size={16} />
-          </button>
-          <strong className="text-white flex-1 text-center text-xl mr-4">My Shopping Bag</strong>
+      <div className="flex flex-col flex-1 pt-2 px-8 overflow-y-scroll">
+        <header className="border-b border-[#47656C] pt-6 pb-4 flex flex-col gap-2.5 items-center">
+          <span className="text-white text-base font-medium">Invites</span>
+          <strong className="text-white font-extrabold text-3xl">0</strong>
         </header>
 
-        <main className="flex flex-col items-center mt-12">
-          <p className="text-center text-white/60 text-[15px] font-medium">Participate in the squadman lottery </p>
-          <span className="text-center text-white/60 text-xs block max-w-32">Get a reward of 300 000 coins when you pay</span>
+        <main className="flex flex-col mt-6">
+          <div className="flex flex-col gap-4 mb-6">
+            <div className="flex justify-between items-center">
+              <strong className="text-white text-xl">Your Invite Link</strong>
+              <button className="rounded-md text-white flex justify-center items-center w-[84px] h-[44px] bg-button-gradient">copy</button>
+            </div>
 
-          <p className="mt-[74px] mb-20 text-white/80 font-medium text-base">Total: <strong className="text-[#38B8EA] text-base">TON 0002.</strong></p>
-          <button className="h-11 rounded-lg custom-gradient text-white px-4 text-base font-medium min-w-[160px]">
-            Pay now
-          </button>
+            <span className="text-base text-white/60">The LR01 uses the same design as the most iconic bikes </span>
+          </div>
+
+          <ul className="flex flex-col gap-2.5 mt-4">
+            {Array.from({ length: 10 }).map((_, index) => (
+              <Invite
+                name="Desmond"
+                value="100 00"
+                key={index}
+              />
+            ))}
+          </ul>
         </main>
       </div>
 

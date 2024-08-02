@@ -22,13 +22,13 @@ module.exports = {
         "background-montain": "url('assets/montain.png')",
       },
       backgroundColor: {
-        "button-gradient": "linear-gradient(90deg, #34C8E8 0%, #4E4AF2 100%)"
+        "button-gradient": "#34C8E8",
+        "white-06": "rgba(255, 255, 255, .06)"
       },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        "white-06": "rgba(255, 255, 255, .06)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
