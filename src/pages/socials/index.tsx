@@ -1,5 +1,3 @@
-import { NavLink } from "react-router-dom"
-
 import { Navigation } from "../../components/navigation"
 import { Item } from "../../components/item"
 import { Summary } from "../../components/summary"
