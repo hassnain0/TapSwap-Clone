@@ -10,6 +10,10 @@ import Phone from "@/assets/lottery/Phone.png"
 import Vector1 from "@/assets/lottery-button/vector-1.png"
 import Vector2 from "@/assets/lottery-button/vector-2.png"
 import Vector3 from "@/assets/lottery-button/vector-3.png"
+import Vector4 from "@/assets/lottery-button/vector-4.png"
+import Vector from "@/assets/lottery-button/vector.png"
+
+import { Link } from "react-router-dom"
 
 const veicles = [
   {
@@ -46,10 +50,10 @@ export function Lottery() {
 
   return (
     <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-8 px-8 overflow-y-scroll">
+      <div className="flex flex-col flex-1 pt-8 px-6 overflow-y-scroll">
         <header className="flex items-center justify-between w-full">
           <strong className="text-[#38B8EA] text-xl">Tickets: 0</strong>
-          <button className="h-10 flex justify-center items-center rounded-lg text-white bg-button-gradient px-4">Buy</button>
+          <Link to="/bag" className="h-10 flex justify-center items-center rounded-lg text-white bg-button-gradient px-4">Buy</Link>
         </header>
 
         <main className="flex flex-col mt-12">
@@ -73,19 +77,19 @@ export function Lottery() {
 
             <div className="flex items-center gap-2 relative mt-4 mb-4">
               <button onClick={() => setCurrent(0)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
-                <img src={Vector1} alt="" className="w-full" />
+                <img src={Vector} alt="" className="w-full" />
               </button>
               <button onClick={() => setCurrent(1)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md top-[-10px]">
+                <img src={Vector1} alt="" className="h-full object-contain" />
+              </button>
+              <button onClick={() => setCurrent(2)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
                 <img src={Vector2} alt="" className="h-full object-contain" />
               </button>
               <button onClick={() => setCurrent(2)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
                 <img src={Vector3} alt="" className="h-full object-contain" />
               </button>
               <button onClick={() => setCurrent(2)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
-                <img src={Vector3} alt="" className="h-full object-contain" />
-              </button>
-              <button onClick={() => setCurrent(2)} className="w-14 h-14 p-4 flex justify-center items-center bg-[#353F54] rounded-md">
-                <img src={Vector3} alt="" className="h-full object-contain" />
+                <img src={Vector4} alt="" className="h-full object-contain" />
               </button>
             </div>
           </div>

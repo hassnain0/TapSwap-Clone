@@ -4,7 +4,7 @@ import { Invite } from "./invite"
 export function Invites() {
   return (
     <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-2 px-8 overflow-y-scroll">
+      <div className="flex flex-col flex-1 pt-2 px-6 overflow-y-scroll">
         <header className="border-b border-[#47656C] pt-6 pb-4 flex flex-col gap-2.5 items-center">
           <span className="text-white text-base font-medium">Invites</span>
           <strong className="text-white font-extrabold text-3xl">0</strong>

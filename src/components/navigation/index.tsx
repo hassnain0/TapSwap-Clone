@@ -11,7 +11,7 @@ export function Navigation() {
         <NavLink to="/socials">
           <ListChecks />
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/home">
           <Pickaxe />
         </NavLink>
         <NavLink to="/lottery">

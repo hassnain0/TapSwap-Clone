@@ -1,15 +1,16 @@
 import { ChevronLeft } from "lucide-react"
 
 import { Navigation } from "@/components/navigation"
+import { Link } from "react-router-dom"
 
 export function ShoppingBag() {
   return (
     <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-8 px-8 overflow-y-scroll">
+      <div className="flex flex-col flex-1 pt-8 px-6 overflow-y-scroll">
         <header className="flex items-center justify-between w-full">
-          <button className="h-10 w-10 flex justify-center items-center rounded-lg text-white bg-button-gradient">
+          <Link to="/lottery" className="h-10 w-10 flex justify-center items-center rounded-lg text-white bg-button-gradient">
             <ChevronLeft color="white" size={16} />
-          </button>
+          </Link>
           <strong className="text-white flex-1 text-center text-xl mr-4">My Shopping Bag</strong>
         </header>
 
