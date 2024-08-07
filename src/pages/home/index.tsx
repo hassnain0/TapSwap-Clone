@@ -21,7 +21,7 @@ export function Home() {
           <div className="flex justify-center items-center">
             <img src={robotImage} alt="Robot image" className="w-72 h-72 mt-4 sm:mt-0" />
           </div>
-          <div className="w-full flex flex-col gap-2 mt-8">
+          <div className="w-full flex flex-col gap-2 mt-16">
             <div className="flex justify-center items-center gap-1">
               <img src={boltImage} alt="Polygon image" className="w-5 h-5" />
               <strong className="font-medium text-base text-white/60">5000/5000

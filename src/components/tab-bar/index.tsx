@@ -1,4 +1,3 @@
-import { ChartNoAxesColumnIncreasing, ListChecks, Pickaxe, Rocket, Users } from "lucide-react";
 import { NavLink, NavLinkProps } from "react-router-dom";
 
 import lot from "@/assets/tab-bar/lot.svg"
