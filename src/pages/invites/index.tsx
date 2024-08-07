@@ -31,6 +31,7 @@ export function Invites() {
                   name="Desmond"
                   value="100 00"
                   key={index}
+                  checked={index % 2 == 0}
                 />
               ))}
             </ul>

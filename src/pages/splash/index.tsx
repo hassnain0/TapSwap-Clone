@@ -10,18 +10,18 @@ export function Splash() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/home")
-    }, 4000);
+    }, 50000000);
   }, [])
 
   return (
     <div className="bg-[#242C3B] min-h-screen flex flex-col items-center bg-bg bg-no-repeat bg-left-bottom">
-      <header className="pt-6 pb-4 flex flex-col gap-2.5 items-center max-w-48">
-        <p className="text-white text-base font-medium text-center">Click The Shape ToChoose Difficulty Level</p>
-        <span className="text-center text-white text-xs">More the edges more the difficulty</span>
+      <header className="pt-6 pb-4 flex flex-col gap-2.5 items-center">
+        <p className="text-white text-lg font-medium text-center max-w-[200px]">Crime doesn’t pay, but Policepay does.</p>
+        <span className="text-center text-white text-xs">Join the force, reap the rewards!</span>
       </header>      
 
       <img src={sony} alt="" />
-      <img src={persons} alt="" className="w-[342px]"/>
+      <img src={persons} alt="" className="w-[240px]"/>
     </div>
   )
 }

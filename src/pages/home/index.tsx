@@ -18,14 +18,13 @@ export function Home() {
         </header>
 
         <main className="flex justify-center items-center flex-col flex-1 pb-10"  >
-          <div className="flex-1 flex justify-center items-center">
-            <img src={robotImage} alt="Robot image" className="w-80 h-80 mt-8" />
+          <div className="flex justify-center items-center">
+            <img src={robotImage} alt="Robot image" className="w-72 h-72 mt-4 sm:mt-0" />
           </div>
-          <div className="w-full flex flex-col gap-3.5 mt-20">
-            <div className="flex justify-center items-center gap-2">
-            <img src={boltImage} alt="Polygon image" className="w-4 h-4" />
-              <strong className="font-extrabold text-[14px] text-white/60">
-                <span className="text-base">5000</span>/5000
+          <div className="w-full flex flex-col gap-2 mt-8">
+            <div className="flex justify-center items-center gap-1">
+              <img src={boltImage} alt="Polygon image" className="w-5 h-5" />
+              <strong className="font-medium text-base text-white/60">5000/5000
               </strong>
             </div>
             <Progress value={33} className="h-4 rounded-full" />

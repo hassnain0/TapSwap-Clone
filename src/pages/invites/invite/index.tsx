@@ -25,14 +25,14 @@ export function Invite({ name, value, checked = false }: InviteProps) {
 
       <div>
         {checked ? (
-          <div className="flex flex-col items-center gap-[6px] justify-between">
+          <div className="flex flex-col items-end gap-[6px] justify-between">
             <img src={checkedImage} alt="Checked" className="w-4 h-4" />
-            <span className="text-[#38B8EA] text-xs">finished</span>
+            <span className="text-sm text-white">Lottery Status: <span className="text-green-500 text-xs">finished</span></span>
           </div>
         ) : (
-          <div className="flex flex-col items-center gap-[6px] justify-between">
+          <div className="flex flex-col items-end gap-[6px] justify-between">
             <img src={notCheckedImage} alt="Checked" className="w-4 h-4" />
-            <span className="text-red-300 text-xs">pending</span>
+            <span className="text-sm text-white">Lottery Status: <span className="text-red-500 text-xs">pending</span></span>
           </div>
         )}
 

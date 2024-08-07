@@ -7,7 +7,7 @@ const Progress = React.forwardRef<
   React.ElementRef<typeof ProgressPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root>
 >(({ className, value, ...props }, ref) => (
-  <div className="bg-[#3A405C]/40 p-2 rounded-full border border-[#3A405C]/60">
+  <div className="bg-[#3A405C]/40 p-1 rounded-full border border-[#3A405C]/60">
     <ProgressPrimitive.Root
       ref={ref}
       className={cn(

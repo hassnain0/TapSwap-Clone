@@ -10,11 +10,11 @@ export function Statics() {
         <Summary />
 
         <main className="mt-12">
-          <ul className="flex flex-col gap-12">
+          <ul className="flex flex-col gap-4">
             <Static title="Total Comunity" content="1284 476570" />
             <Static title="Total Miners" content="1284 476570" />
-            <Static title="Comming soon" content="?" />
-            <Static title="Comming soon" content="?" />
+            <Static title="Lottery Players" content="5 000" />
+            <Static title="Lottery Positions" content="100 000" />
           </ul>
         </main>
       </div>
