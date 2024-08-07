@@ -21,11 +21,10 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "navigation-background": "url('assets/tabBar.png')",
-        "background-montain": "url('assets/montain.png')",
+        "montain": "url('assets/montain.svg')",
       },
       backgroundColor: {
-        "button-gradient": "#34C8E8",
+        "button": "#34C8E8",
         "white-06": "rgba(255, 255, 255, .06)"
       },
       colors: {

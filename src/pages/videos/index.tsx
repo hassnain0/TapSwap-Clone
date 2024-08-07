@@ -1,32 +1,39 @@
-import { Navigation } from "../../components/navigation"
 import { Item } from "./item"
-import { Summary } from "../../components/summary"
 
-import youtubeIcon from "../../assets/youtube.png"
-import { HomenNavigation } from "../../components/home-navigation"
+import youtubeIcon from "@/assets/videos-icons/youtube-icon.svg"
+
+const socials = [
+  {
+    id: 0,
+    name: "Follow Youtube is clossin",
+    icon: youtubeIcon,
+    value: "100 000"
+  },
+  {
+    id: 1,
+    name: "Follow Youtube is clossin",
+    icon: youtubeIcon,
+    value: "100 000"
+  },
+  {
+    id: 2,
+    name: "Telegae  hhhj gous jod ",
+    icon: youtubeIcon,
+    value: "100 000"
+  }
+]
 
 export function Videos() {
   return (
-    <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-2 px-6 overflow-y-scroll">
-        <Summary />
-
-        <main className="flex flex-col mt-6">
-          <HomenNavigation />
-
-          <ul className="flex flex-col gap-2.5 mt-4">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <Item
-                title="How to wread homns"
-                socialIcon={youtubeIcon}
-                value="100 00"
-                key={index}
-              />
-            ))}
-          </ul>
-        </main>
-      </div>
-      <Navigation />
-    </div>
+    <ul className="flex flex-col gap-2.5 mt-4">
+      {socials.map((social) => (
+        <Item
+          title={social.name}
+          socialIcon={social.icon}
+          value={social.value}
+          key={social.id}
+        />
+      ))}
+    </ul>
   )
 }

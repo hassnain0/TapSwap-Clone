@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import persons from "../../assets/persons.png"
-import sony from "../../assets/sony-icons.png"
+
+import persons from "@/assets/splash/sony-persons.svg"
+import sony from "@/assets/splash/sony-icons.svg"
 
 export function Splash() {
   const navigate = useNavigate()
@@ -9,7 +10,7 @@ export function Splash() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/home")
-    }, 1500);
+    }, 4000);
   }, [])
 
   return (

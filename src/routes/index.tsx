@@ -4,6 +4,9 @@ import { Statics } from "@/pages/statics";
 import { Home } from "@/pages/home";
 import { Socials } from "@/pages/socials";
 import { ShoppingBag } from "@/pages/shopping-bag";
+
+import { RootLayout } from "@/pages/layouts/default";
+
 import { Tasks } from "@/pages/tasks";
 import { Videos } from "@/pages/videos";
 import { Splash } from "@/pages/splash";
@@ -17,9 +20,11 @@ export function RoutesProvider() {
       <Route element={<Home />} path="/home" />
       <Route element={<Statics />} path="/static" />
 
-      <Route element={<Socials />} path="/socials" />
-      <Route element={<Videos />} path="/videos" />
-      <Route element={<Tasks />} path="/tasks" />
+      <Route element={<RootLayout />} path="/">
+        <Route element={<Socials />} path="/socials" />
+        <Route element={<Videos />} path="/videos" />
+        <Route element={<Tasks />} path="/tasks" />
+      </Route>
 
       <Route element={<Invites />} path="/invites" />
       <Route element={<ShoppingBag />} path="/bag" />

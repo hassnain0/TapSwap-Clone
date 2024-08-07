@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react"
 
-import poly from "../../assets/poly.png"
+import poly from "@/assets/dollar.svg"
 
 interface ItemProps {
   title: string;

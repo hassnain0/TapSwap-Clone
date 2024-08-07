@@ -1,7 +1,7 @@
 import { Progress } from "./progress";
 
-import poly from "@/assets/blue-polygon.png"
-import ribbon from "@/assets/ribbon.png"
+import dolarImage from "@/assets/dollar.svg"
+import ribbon from "@/assets/ribbon.svg"
 
 interface ItemProps {
   title: string;
@@ -18,7 +18,7 @@ export function Task({ title, value }: ItemProps) {
             <p className="text-[#F9F9F9] text-[13px] font-semibold">{title}</p>
           </div>
           <div className="flex items-center gap-1 ml-1 mt-1">
-            <img src={poly} alt="" className="w-3 h-3" />
+            <img src={dolarImage} alt="" className="w-3 h-3" />
             <span className="flex items-center gap-1 text-[#E7E7E7] text-[11px]">{value}</span>
           </div>
         </div>

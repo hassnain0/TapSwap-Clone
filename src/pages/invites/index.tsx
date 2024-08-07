@@ -1,10 +1,11 @@
-import { Navigation } from "../../components/navigation"
+import { TabBar } from "../../components/tab-bar"
+
 import { Invite } from "./invite"
 
 export function Invites() {
   return (
     <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-2 px-6 overflow-y-scroll">
+      <div className="flex flex-col flex-1 pt-2 px-6 overflow-y-scroll max-w-[728px] mx-auto w-full">
         <header className="border-b border-[#47656C] pt-6 pb-4 flex flex-col gap-2.5 items-center">
           <span className="text-white text-base font-medium">Invites</span>
           <strong className="text-white font-extrabold text-3xl">0</strong>
@@ -14,7 +15,7 @@ export function Invites() {
           <div className="flex flex-col gap-4 mb-4 bg-[#2C3649]/70 border-2 border-[#2C3649] p-4 rounded-md">
             <div className="flex justify-between items-center">
               <strong className="text-white text-xl">Your Invite Link</strong>
-              <button className="rounded-md text-white flex justify-center items-center w-[84px] h-[40px] bg-button-gradient">copy</button>
+              <button className="rounded-md text-white flex justify-center items-center w-[84px] h-[40px] bg-button">copy</button>
             </div>
 
             <span className="text-base text-white/60">The LR01 uses the same design as the most iconic bikes </span>
@@ -37,7 +38,7 @@ export function Invites() {
         </main>
       </div>
 
-      <Navigation />
+      <TabBar />
     </div>
   )
 }

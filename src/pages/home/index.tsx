@@ -1,15 +1,14 @@
-import { Zap } from 'lucide-react'
-
-import { Navigation } from "@/components/navigation"
+import { TabBar } from "@/components/tab-bar"
 import { Progress } from "@/components/ui/progress"
 
-import robotImage from "@/assets/robot.png"
+import robotImage from "@/assets/robot.svg"
+import boltImage from "@/assets/bolt.svg"
 import dolarImage from "@/assets/dollar.svg"
 
 export function Home() {
   return (
     <div className="min-h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-2 px-6">
+      <div className="flex flex-col flex-1 pt-2 px-6 max-w-[728px] mx-auto w-full">
         <header className="border-b border-[#293A3B] pt-6 pb-4 flex flex-col gap-3 items-center">
           <span className="text-white text-base font-medium">Balance</span>
           <div className="flex items-center gap-2.5">
@@ -24,13 +23,7 @@ export function Home() {
           </div>
           <div className="w-full flex flex-col gap-3.5 mt-20">
             <div className="flex justify-center items-center gap-2">
-              <Zap
-                size={16}
-                color="yellow"
-                fill="bold"
-                strokeWidth={3}
-                absoluteStrokeWidth
-              />
+            <img src={boltImage} alt="Polygon image" className="w-4 h-4" />
               <strong className="font-extrabold text-[14px] text-white/60">
                 <span className="text-base">5000</span>/5000
               </strong>
@@ -40,7 +33,7 @@ export function Home() {
         </main>
       </div>
 
-      <Navigation />
+      <TabBar />
     </div>
   )
 }

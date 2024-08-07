@@ -12,8 +12,8 @@ interface VideoProps {
   children: ReactNode
 }
 
-import polygonImage from "@/assets/polygon.png"
-import person from "@/assets/person.png"
+import polygonImage from "@/assets/dollar.svg"
+import person from "@/assets/person.svg"
 
 export const Video = forwardRef<HTMLDivElement, VideoProps>((props, ref) => {
   const [finish, setFinish] = useState(false)
@@ -37,7 +37,7 @@ export const Video = forwardRef<HTMLDivElement, VideoProps>((props, ref) => {
 
             <form className="flex flex-col gap-4" onSubmit={handleSetFinish}>
               <input type="text" placeholder="Enter" className="flex-1 custom-input h-12 bg-[#242C3B] rounded-lg text-white p-2 border-none outline-none" />
-              <button className="text-white flex justify-center items-center bg-button-gradient px-4 rounded-base h-12 w-full">Go</button>
+              <button className="text-white flex justify-center items-center bg-button px-4 rounded-base h-12 w-full">Go</button>
             </form>
           </SheetContent>
         ) : (
@@ -53,7 +53,7 @@ export const Video = forwardRef<HTMLDivElement, VideoProps>((props, ref) => {
               <strong className="text-white font-extrabold text-3xl">10087</strong>
             </div>
 
-            <button className="text-white flex justify-center items-center bg-button-gradient px-4 rounded-md h-12 w-[114px]">Claim</button>
+            <button className="text-white flex justify-center items-center bg-button px-4 rounded-md h-12 w-[114px]">Claim</button>
           </SheetContent>
         )}
     </Sheet>

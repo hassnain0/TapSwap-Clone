@@ -24,7 +24,7 @@
 
 //         <form className="flex flex-col gap-4" onSubmit={handleSetFinish}>
 //           <input type="text" placeholder="Enter" className="flex-1 custom-input h-12 bg-[#242C3B] rounded-lg text-white p-2 border-none outline-none" />
-//           <button className="text-white flex justify-center items-center bg-button-gradient px-4 rounded-base h-12 w-full">Go</button>
+//           <button className="text-white flex justify-center items-center bg-button px-4 rounded-base h-12 w-full">Go</button>
 //         </form>
 //       </SheetContent>
 //     </Sheet>

@@ -19,10 +19,10 @@ const Link = (props: LinkProps) => {
 }
 
 
-export function Navigation() {
+export function TabBar() {
   return (
     <footer className="w-full">
-      <nav className="flex items-center justify-evenly gap-2 text-[#707489] text-xl pb-4 px-2">
+      <nav className="flex items-center justify-center gap-2 text-[#707489] text-xl pb-4 px-2">
         <Link to="/invites">
           <Users />
           <span>Ref</span>

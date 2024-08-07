@@ -1,34 +1,42 @@
-import { Navigation } from "../../components/navigation"
 import { Item } from "../../components/item"
-import { Summary } from "../../components/summary"
 
-import telegramIcon from "../../assets/telegram.png"
-import { HomenNavigation } from "../../components/home-navigation"
+import youtubeIcon from "@/assets/videos-icons/youtube-icon.svg"
+import xIcon from "@/assets/videos-icons/telegram-icon.svg"
+import telegramIcon from "@/assets/videos-icons/x-icon.svg"
+
+const socials = [
+  {
+    id: 0,
+    name: "Follow Telegram",
+    icon: telegramIcon,
+    value: "100 000"
+  },
+  {
+    id: 1,
+    name: "Follow Youtube",
+    icon: youtubeIcon,
+    value: "100 000"
+  },
+  {
+    id: 2,
+    name: "Follow X Handle",
+    icon: xIcon,
+    value: "100 000"
+  }
+]
 
 export function Socials() {
   return (
-    <div className="h-screen bg-[#242C3B] flex flex-col">
-      <div className="flex flex-col flex-1 pt-2 px-6 overflow-y-scroll">
-        <Summary />
-
-        <main className="flex flex-col mt-6">
-          <HomenNavigation />
-
-          <ul className="flex flex-col gap-2.5 mt-4">
-            {Array.from({ length: 10 }).map((_, index) => (
-              <Item
-                title="Follow Instagram"
-                socialIcon={telegramIcon}
-                value="100 00"
-                key={index}
-              />
-            ))}
-          </ul>
-        </main>
-      </div>
-
-      <Navigation />
-    </div>
+    <ul className="flex flex-col gap-2.5 mt-4">
+      {socials.map((social) => (
+        <Item
+          title={social.name}
+          socialIcon={social.icon}
+          value={social.value}
+          key={social.id}
+        />
+      ))}
+    </ul>
   )
 }
 
