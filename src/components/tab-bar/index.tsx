@@ -14,7 +14,7 @@ const Link = (props: LinkProps) => {
     <NavLink
       className={({ isActive }) =>
         isActive ?
-          "bg-[#2C3649] flex flex-col w-20 h-20  items-center justify-center gap-1 rounded-xl text-[#38B8EA] border border-[#38B8EA] text-sm" :
+          "bg-[#2C3649] flex flex-col w-20 h-20  items-center justify-center bg-[#E4C733]/10 gap-1 rounded-xl text-[#38B8EA] border border-[#E4E911]/60 text-sm" :
           "bg-[#2C3649] flex w-20 h-20 flex-col items-center justify-center gap-1 rounded-xl text-[#7C7C7C] border border-transparent text-sm"
       }
       {...props}

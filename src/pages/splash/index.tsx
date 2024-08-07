@@ -21,7 +21,7 @@ export function Splash() {
       </header>      
 
       <img src={sony} alt="" />
-      <img src={persons} alt="" className="w-[240px]"/>
+      <img src={persons} alt="" />
     </div>
   )
 }
