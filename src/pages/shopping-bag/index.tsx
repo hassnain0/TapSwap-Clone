@@ -1,6 +1,6 @@
 import { ChevronLeft } from "lucide-react"
 
-import { Navigation } from "@/components/tab-bar"
+import { TabBar } from "@/components/tab-bar"
 import { Link } from "react-router-dom"
 
 export function ShoppingBag() {
@@ -25,7 +25,7 @@ export function ShoppingBag() {
         </main>
       </div>
 
-      <Navigation />
+      <TabBar />
     </div>
   )
 }
