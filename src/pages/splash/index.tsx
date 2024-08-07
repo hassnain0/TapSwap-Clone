@@ -10,7 +10,7 @@ export function Splash() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/home")
-    }, 50000000);
+    }, 9500);
   }, [])
 
   return (
