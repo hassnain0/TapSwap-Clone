@@ -8,7 +8,7 @@ export function Link(props: LinkProps) {
       }
       {...props}
     >
-      Videos
+      {props.children}
     </NavLink>
   )
 }
