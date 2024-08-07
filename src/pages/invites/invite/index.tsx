@@ -15,7 +15,7 @@ export function Invite({ name, value, checked = false }: InviteProps) {
       <div className="flex items-center gap-2">
         <div className="border-2 border-[#38B8EA] bg-white rounded-full w-10 h-10" />
         <div className="flex flex-col gap-[6px]">
-          <strong className="text-[#E7E7E7] text-xl font-medium">{name}</strong>
+          <strong className="text-white text-xl font-medium">{name}</strong>
           <div className="flex items-center gap-1">
             <img src={dolarImage} alt="" className="w-4 h-4" />
             <span className="text-[#38B8EA] text-[10px] font-medium">+{value}</span>
