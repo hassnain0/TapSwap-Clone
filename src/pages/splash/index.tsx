@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 
-import persons from "@/assets/splash/sony-persons.svg"
+import persons from "@/assets/Group 48095651.png"
 import sony from "@/assets/splash/sony-icons.svg"
 
 export function Splash() {

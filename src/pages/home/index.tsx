@@ -1,7 +1,7 @@
 import { TabBar } from "@/components/tab-bar"
 import { Progress } from "@/components/ui/progress"
 
-import robotImage from "@/assets/robot.svg"
+import robotImage from "@/assets/robot.png"
 import boltImage from "@/assets/bolt.svg"
 import dolarImage from "@/assets/dollar.svg"
 
