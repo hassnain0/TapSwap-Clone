@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
 import { Statics } from "@/pages/statics";
 import { Home } from "@/pages/home";
 import { Socials } from "@/pages/socials";
@@ -30,5 +29,5 @@ export function RoutesProvider() {
       <Route element={<ShoppingBag />} path="/bag" />
       <Route element={<Lottery />} path="/lottery" />
     </Routes>
-  )
+  );
 }

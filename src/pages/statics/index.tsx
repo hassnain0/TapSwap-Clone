@@ -1,7 +1,6 @@
-import { TabBar } from "../../components/tab-bar"
-
-import { Summary } from "../../components/summary"
-import { Static } from "./static"
+import { TabBar } from "../../components/tab-bar";
+import { Summary } from "../../components/summary";
+import { Static } from "./static";
 
 export function Statics() {
   return (
@@ -11,9 +10,9 @@ export function Statics() {
 
         <main className="mt-12">
           <ul className="flex flex-col gap-4">
-            <Static title="Total Comunity" content="1284 476570" />
-            <Static title="Total Miners" content="1284 476570" />
-            <Static title="Lottery Players" content="5 000" />
+            <Static title="Total Comunity" content="0" />
+            <Static title="Total Miners" content="0" />
+            <Static title="Lottery Players" content="0" />
             <Static title="Lottery Positions" content="100 000" />
           </ul>
         </main>
@@ -21,5 +20,5 @@ export function Statics() {
 
       <TabBar />
     </div>
-  )
+  );
 }

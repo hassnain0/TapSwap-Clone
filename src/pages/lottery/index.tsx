@@ -39,7 +39,7 @@ const veicles = [
 
   },
   {
-    name: "Iphone 16",
+    name: "Iphone 15 pro max",
     value: "40 000",
     image: Phone,
     heart: false,

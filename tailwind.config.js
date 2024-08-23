@@ -27,6 +27,11 @@ module.exports = {
         "button": "#34C8E8",
         "white-06": "rgba(255, 255, 255, .06)"
       },
+      boxShadow: {
+        boxShadow: {
+          'custom-glow': '0 20px 15px rgba(0, 0, 0, 0.5)',// Adjust the color and spread
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
