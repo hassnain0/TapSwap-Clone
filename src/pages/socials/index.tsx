@@ -53,7 +53,7 @@ export function Socials() {
 
       if (docSnap.exists()) {
         const data = docSnap.data();
-        
+        console.log("Data",data)
         if (data.Whatsapp) {
           setWhatsappEnabled(true);
         }
@@ -150,3 +150,5 @@ export function Socials() {
     </div>
   );
 }
+
+

@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import poly from "@/assets/dollar.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import { fetchData, updateUserDoc } from "@/constants/Database";
 import { toast } from "react-toastify";
@@ -27,10 +27,14 @@ export function Item({
   isClaimed,
   onUpdate,
 }: ItemProps) {
+  console.log("Claimed",isClaimed)
   const [loading, setLoading] = useState(false);
   const [claimed, setClaimed] = useState(false);
   const [claimedDone, setClaimedDone] = useState(isClaimed);
 
+  useEffect(()=>{
+    setClaimedDone(isClaimed);
+  })
   const handleClick = () => {
     setLoading(true);
     setTimeout(() => {

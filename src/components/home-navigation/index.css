@@ -1,0 +1,5 @@
+@media (max-width: 350px) {
+    .nav-link-container {
+      flex-wrap: nowrap; /* Prevent wrapping */
+    }
+  }

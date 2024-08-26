@@ -1,7 +1,7 @@
-import { ChevronRight } from "lucide-react"
-import { Video } from "@/components/video"
+import { ChevronRight } from "lucide-react";
+import { Video } from "@/components/video";
 
-import dolar from "@/assets/dollar.svg"
+import dolar from "@/assets/dollar.svg";
 
 interface ItemProps {
   title: string;
@@ -16,7 +16,9 @@ export function Item({ socialIcon, title, value }: ItemProps) {
         <div className="flex items-center gap-2">
           <img src={socialIcon} alt="" className="w-7 h-7" />
           <div className="flex flex-col gap-[2px]">
-            <strong className="text-[#F9F9F9] text-xs font-semibold">{title}</strong>
+            <strong className="text-[#F9F9F9] text-xs font-semibold">
+              {title}
+            </strong>
             <span className="flex items-center gap-1 text-[#E7E7E7] text-[11px]">
               <img src={dolar} alt="" className="w-3 h-3" /> {value}
             </span>
@@ -25,5 +27,5 @@ export function Item({ socialIcon, title, value }: ItemProps) {
         <ChevronRight color="#BEBEBE" size={32} />
       </li>
     </Video>
-  )
+  );
 }

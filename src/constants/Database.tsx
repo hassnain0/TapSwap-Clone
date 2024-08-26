@@ -33,7 +33,7 @@ export const fetchData = async (collectionName:string,userId:string) => {
 //   }
 // };
 
-export const updateUserDoc=async(CollectionName:string,telegramUserId:string,balance:string)=>{
+export const updateUserDoc=async(CollectionName:string,telegramUserId:string,balance:number)=>{
   try {
     const docRef = doc(db, CollectionName, telegramUserId);
     const docSnap = await getDoc(docRef);
@@ -41,6 +41,7 @@ export const updateUserDoc=async(CollectionName:string,telegramUserId:string,bal
       setTimeout(async () => {
         await updateDoc(docRef, {
           balance:balance,
+          
         });
       }, 5000); // 5000 milliseconds = 5 seconds
     }

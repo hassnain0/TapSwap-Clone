@@ -7,6 +7,9 @@ import { useEffect, useState } from "react";
 import { fetchData, updateUserDoc } from "@/constants/Database.tsx";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import db from "@/constants/Firebase";
+import ajax from "@/services/fetchService";
+import baseurl from "@/baseurl";
+
 export function Home() {
   const [totalPoints, setTotalPoints] = useState(2500);
   const [points, setPoints] = useState(2500);
@@ -16,7 +19,6 @@ export function Home() {
   );
   const [pointsToAdd, setPointsToAdd] = useState(1);
   const [friendsInvited] = useState(0); // Number of friends invited
-  const telegramUserId = "1234";
 
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
@@ -29,58 +31,81 @@ export function Home() {
     setTimeout(() => {
       card.style.transform = "";
     }, 100);
-    setBalance(balance + 1);
+  ajax(`${baseurl}user/1/balance`, "PATCH")
+  .then((response: any) => {
+    setBalance(response.balance);
+  })
     setPoints(points - pointsToAdd);
     setClicks([...clicks, { id: Date.now(), x: e.pageX, y: e.pageY }]);
   };
 
-  useEffect(() => {
-    if (friendsInvited >= 80) {
-      setPoints(1280000);
-      setTotalPoints(1280000);
-      setPointsToAdd(10);
-    } else if (friendsInvited >= 70) {
-      setPoints(640000);
-      setTotalPoints(640000);
-      setPointsToAdd(9);
-    } else if (friendsInvited >= 60) {
-      setPoints(320000);
-      setTotalPoints(320000);
-      setPointsToAdd(8);
-    } else if (friendsInvited >= 50) {
-      setPoints(160000);
-      setTotalPoints(160000);
-      setPointsToAdd(7);
-    } else if (friendsInvited >= 40) {
-      setPoints(80000);
-      setTotalPoints(80000);
-      setPointsToAdd(6);
-    } else if (friendsInvited >= 30) {
-      setPoints(40000);
-      setPointsToAdd(5);
-    } else if (friendsInvited >= 20) {
-      setPoints(20000);
-      setTotalPoints(20000);
-      setPointsToAdd(4);
-    } else if (friendsInvited >= 10) {
-      setPoints(10000);
-      setTotalPoints(10000);
-      setPointsToAdd(3);
-    } else if (friendsInvited >= 5) {
-      setPoints(5000);
-      setTotalPoints(5000);
-      setPointsToAdd(2);
-    } else {
-      setPoints(2500);
-      setTotalPoints(2500);
-      setPointsToAdd(1);
-    }
-  }, [friendsInvited]);
 
-  useEffect(() => {
-    createDoc();
-    getData();
-  }, []);
+
+  // useEffect(() => {
+  //   // Handle points and points-related state updates
+  //   if (friendsInvited >= 80) {
+  //     setPoints(1280000);
+  //     setTotalPoints(1280000);
+  //     setPointsToAdd(10);
+  //   } else if (friendsInvited >= 70) {
+  //     setPoints(640000);
+  //     setTotalPoints(640000);
+  //     setPointsToAdd(9);
+  //   } else if (friendsInvited >= 60) {
+  //     setPoints(320000);
+  //     setTotalPoints(320000);
+  //     setPointsToAdd(8);
+  //   } else if (friendsInvited >= 50) {
+  //     setPoints(160000);
+  //     setTotalPoints(160000);
+  //     setPointsToAdd(7);
+  //   } else if (friendsInvited >= 40) {
+  //     setPoints(80000);
+  //     setTotalPoints(80000);
+  //     setPointsToAdd(6);
+  //   } else if (friendsInvited >= 30) {
+  //     setPoints(40000);
+  //     setTotalPoints(40000);
+  //     setPointsToAdd(5);
+  //   } else if (friendsInvited >= 20) {
+  //     setPoints(20000);
+  //     setTotalPoints(20000);
+  //     setPointsToAdd(4);
+  //   } else if (friendsInvited >= 10) {
+  //     setPoints(10000);
+  //     setTotalPoints(10000);
+  //     setPointsToAdd(3);
+  //   } else if (friendsInvited >= 5) {
+  //     setPoints(5000);
+  //     setTotalPoints(5000);
+  //     setPointsToAdd(2);
+  //   } else {
+  //     setPoints(2500);
+  //     setTotalPoints(2500);
+  //     setPointsToAdd(1);
+  //   }
+
+  //   // Handle initial API calls
+  //   createDoc();
+  //   getData();
+
+  //   // Handle points increment
+  //   if (points < 1280000) {
+  //     const interval = setInterval(() => {
+  //       setPoints((prevPoints) => prevPoints + 1);
+  //     }, 1000);
+
+  //     return () => clearInterval(interval); // Cleanup interval
+  //   }
+  // }, [friendsInvited, points]);
+
+  // useEffect(() => {
+  //   // Update user document when balance changes
+  //   const updateDoc = async () => {
+  //     await updateUserDoc("Users", telegramUserId, balance);
+  //   };
+  //   updateDoc();
+  // }, [balance]);
 
   const getData = async () => {
     const data = await fetchData("Users", telegramUserId);
@@ -90,63 +115,7 @@ export function Home() {
     setClicks((prevClicks) => prevClicks.filter((click) => click.id !== id));
   };
 
-  useEffect(() => {
-    if (
-      points < 2500 ||
-      (points < 5000 && points > 2500) ||
-      (points < 10000 && points > 2500 && points > 5000) ||
-      (points < 20000 && points > 2500 && points > 5000 && points > 10000) ||
-      (points < 40000 &&
-        points > 2500 &&
-        points > 5000 &&
-        points > 10000 &&
-        points > 20000) ||
-      (points < 80000 &&
-        points > 2500 &&
-        points > 5000 &&
-        points > 10000 &&
-        points > 20000 &&
-        points > 40000) ||
-      (points < 160000 &&
-        points > 2500 &&
-        points > 5000 &&
-        points > 10000 &&
-        points > 20000 &&
-        points > 40000 &&
-        points > 80000) ||
-      (points < 320000 &&
-        points > 2500 &&
-        points > 5000 &&
-        points > 10000 &&
-        points > 20000 &&
-        points > 40000 &&
-        points > 80000 &&
-        points > 640000) ||
-      (points < 1280000 &&
-        points > 2500 &&
-        points > 5000 &&
-        points > 10000 &&
-        points > 20000 &&
-        points > 40000 &&
-        points > 80000 &&
-        points > 320000 &&
-        points > 640000)
-    ) {
-      const interval = setInterval(() => {
-        setPoints((prevPoints) => prevPoints + 1);
-      }, 1000);
-
-      return () => clearInterval(interval);
-    }
-  }, [points]);
-
-  useEffect(() => {
-    const updateDoc = async () => {
-      await updateUserDoc("Users", telegramUserId, balance);
-      updateDoc();
-    };
-  }, [balance]);
-
+const telegramUserId="1234";
   const createDoc = async () => {
     try {
       // Replace this with the actual user ID
@@ -165,6 +134,7 @@ export function Home() {
       console.error("Error checking or creating document: ", e);
     }
   };
+
   return (
     <div className="min-h-screen bg-[#242C3B] flex flex-col">
       <div className="flex flex-col flex-1 pt-2 px-6 max-w-[728px] mx-auto w-full">
@@ -177,7 +147,6 @@ export function Home() {
             </strong>
           </div>
         </header>
-
         <main className="flex justify-center items-center flex-col flex-1 pb-10">
           <div
             onClick={handleCardClick}
@@ -191,6 +160,7 @@ export function Home() {
             />
           </div>
         </main>
+
         <div className="w-full flex flex-col gap-2 mb-5">
           <div className="flex justify-center items-center gap-1">
             <img src={boltImage} alt="Polygon image" className="w-5 h-5" />
@@ -199,9 +169,9 @@ export function Home() {
             </strong>
           </div>
           <Progress
-  value={(points / 2500) * 100}
-  className="h-4 rounded-full"
-/>
+            value={(points / 2500) * 100}
+            className="h-4 rounded-full"
+          />
         </div>
       </div>
       {clicks.map((click) => (
