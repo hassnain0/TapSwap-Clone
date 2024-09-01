@@ -5,9 +5,7 @@ import telegramIcon from "@/assets/videos-icons/x-icon.svg";
 import whatsappIcon from "@/assets/videos-icons/whatsapp-icon.svg";
 import { ToastContainer,} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import db from "@/constants/Firebase";
+import {useState } from "react";
 const socials = [
   {
     id: 0,
@@ -45,32 +43,6 @@ export function Socials() {
   const [x_handleEnabled, setx_handleEnabled] = useState(false);
   const [youtubeEnabled, setYoutubeEnabled] = useState(false);
   const [refresh,setRefresh]=useState(false);
-
-  useEffect(() => {
-    const fetchSocialData = async () => {
-      const docRef = doc(db, "Users", "1234"); // Replace 'documentID' with your actual document ID
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        const data = docSnap.data();
-        console.log("Data",data)
-        if (data.Whatsapp) {
-          setWhatsappEnabled(true);
-        }
-        if (data.Telegram) {
-          setTelegramEnabled(true);
-        }
-        if (data.X_Handle) {
-          setx_handleEnabled(true);
-        }
-        if (data.Youtube) {
-          setYoutubeEnabled(true);
-        }
-      }
-    };
-
-    fetchSocialData();
-  },[refresh]);
 
   const handleRefresh = () => {
     setRefresh(!refresh); // Toggle refresh state

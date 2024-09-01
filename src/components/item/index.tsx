@@ -2,11 +2,9 @@ import { ChevronRight } from "lucide-react";
 import poly from "@/assets/dollar.svg";
 import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
-import { fetchData, updateUserDoc } from "@/constants/Database";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
-import db from "@/constants/Firebase";
+
 
 interface ItemProps {
   title: string;
@@ -27,7 +25,6 @@ export function Item({
   isClaimed,
   onUpdate,
 }: ItemProps) {
-  console.log("Claimed",isClaimed)
   const [loading, setLoading] = useState(false);
   const [claimed, setClaimed] = useState(false);
   const [claimedDone, setClaimedDone] = useState(isClaimed);
@@ -42,58 +39,8 @@ export function Item({
       setClaimed(true);
     }, 5000);
   };
-  const telegramUserId = "1234";
-  const collectionName = "Users";
-
-  const claimAward = async () => {
-    setLoading(true);
-    setClaimed(false);
-    const data = await fetchData(collectionName, telegramUserId);
-    const balance = data?.balance + value;
-
-    if (balance) {
-      await updateUserDoc(collectionName, telegramUserId, balance);
-      setClaimedDone(true);
-      setLoading(false);
-      toast.success("Claimed Successfully");
-      StoreFollow();
-    }
-  };
-
-  const StoreFollow = async () => {
-    const telegramUserId = "1234";
-    try {
-      const docRef = doc(db, "Users", telegramUserId);
-      const docSnap = await getDoc(docRef);
-
-      if (docSnap.exists()) {
-        if (id === 3) {
-          // Assuming key=3 corresponds to WhatsApp
-          await updateDoc(docRef, {
-            Whatsapp: true,
-          });
-        } else if (id === 2) {
-          // Assuming key=3 corresponds to WhatsApp
-          await updateDoc(docRef, {
-            Telegram: true,
-          });
-        } else if (id === 1) {
-          // Assuming key=3 corresponds to WhatsApp
-          await updateDoc(docRef, {
-            Youtube: true,
-          });
-        } else if (id === 0) {
-          // Assuming key=3 corresponds to WhatsApp
-          await updateDoc(docRef, {
-            X_Handle: true,
-          });
-        }
-        onUpdate();
-      }
-    } catch (err) {
-      console.log("Error", err);
-    }
-  };
+ 
+ 
   return (
     <div>
       <li className="flex items-center justify-between bg-[#2C3649] rounded-[10px] p-4">

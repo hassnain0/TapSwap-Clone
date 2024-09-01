@@ -2,7 +2,6 @@ import { Progress } from "./progress";
 import { ClipLoader } from "react-spinners";
 import dolarImage from "@/assets/dollar.svg";
 import ribbon from "@/assets/ribbon.svg";
-import { fetchData, updateUserDoc } from "@/constants/Database";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
