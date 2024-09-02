@@ -3,7 +3,7 @@ import { Progress } from "@/components/ui/progress";
 import robotImage from "@/assets/robot.png";
 import boltImage from "@/assets/bolt.svg";
 import dolarImage from "@/assets/dollar.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Home() {
   const [totalPoints, setTotalPoints] = useState(2500);
@@ -13,7 +13,6 @@ export function Home() {
     []
   );
   const [pointsToAdd, setPointsToAdd] = useState(1);
-
   const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -25,11 +24,17 @@ export function Home() {
     setTimeout(() => {
       card.style.transform = "";
     }, 100);
-    setBalance(balance+pointsToAdd)
+    setBalance(balance + pointsToAdd);
     setPoints(points - pointsToAdd);
     setClicks([...clicks, { id: Date.now(), x: e.pageX, y: e.pageY }]);
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      if(points<2500)
+      setPoints([...points,pointsToAdd]);
+    }, 1000);
+  },);
 
   const handleAnimationEnd = (id: number) => {
     setClicks((prevClicks) => prevClicks.filter((click) => click.id !== id));

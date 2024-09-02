@@ -59,7 +59,6 @@ export function Item({
           <ClipLoader color="#F9F9F9" size={24} />
         ) : claimed ? (
           <button
-            onClick={claimAward}
             className="bg-green-500 text-white rounded-[10px] px-4 py-2"
           >
             Claim
